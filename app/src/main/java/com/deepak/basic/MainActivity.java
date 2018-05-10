@@ -3,6 +3,7 @@ package com.deepak.basic;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,11 +21,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //LoadingAlert loadingAlert=new LoadingAlert(this);
-        //loadingAlert.alertShow();
+        final LoadingAlert loadingAlert=new LoadingAlert(this);
+        final AppNavigationController appNavigationController=new AppNavigationController(this);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                //loadingAlert.alertShow();
+                appNavigationController.Wf(Activity2.class);
+            }
+        },1000);
 
-        cameraController=new CameraController(this);
-        cameraController.OpenCam();
+
+        //cameraController=new CameraController(this);
+        //cameraController.OpenCam();
     }
 
 

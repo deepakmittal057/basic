@@ -37,7 +37,7 @@ public class LoadingAlert {
         popupWindow = new PopupWindow(view, width, hight, true);
         popupWindow.setOutsideTouchable(true);
         popupWindow.setFocusable(true);
-        //alertHide();
+        alertHide();
     }
 
 
@@ -49,7 +49,9 @@ public class LoadingAlert {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-            }}
+            }
+
+    }
 
     public void alertHide(){
         if(popupWindow.isShowing()){
