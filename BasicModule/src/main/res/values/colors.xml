@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1a1819</color>
+    <color name="colorPrimaryDark">#1a1819</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="alertColorBackground">#5f020202</color>
+    <color name="green">#04bebd</color>
+    <color name="black">#1a1819</color>
+    <color name="pink">#ed316e</color>
+    <color name="seekbarprogress">#f29193</color>
+    <color name="backgrounddark">#7b364c</color>
+    <color name="red">#ff5c56</color>
+    <color name="white">#ffffff</color>
+    <color name="transparentt">#00000000</color>
+    <color name="transparenttt">#00FFFFFF</color>
+    <color name="transparent_black">#75000000</color>
+    <color name="gray">#a2a2a2</color>
+
+
+</resources>
