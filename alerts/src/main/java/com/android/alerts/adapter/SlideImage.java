@@ -18,18 +18,12 @@ public class SlideImage extends PagerAdapter {
     private List<Integer> IMAGES;
     private LayoutInflater inflater;
     private Context context;
-
-
+    
     public SlideImage(Context context, List<Integer> IMAGES) {
         this.context = context;
         this.IMAGES=IMAGES;
         inflater = LayoutInflater.from(context);
-
-
-
     }
-
-
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
@@ -49,7 +43,6 @@ public class SlideImage extends PagerAdapter {
         assert imageLayout != null;
         ImageView imageView=(ImageView)imageLayout.findViewById(R.id.Profile_pic_imageView);
         view.addView(imageLayout, 0);
-
         imageView.setImageResource(IMAGES.get(position));
 
         return imageLayout;
@@ -59,7 +52,6 @@ public class SlideImage extends PagerAdapter {
     public boolean isViewFromObject(View view, Object object) {
         return view.equals(object);
     }
-
 
     @Override
     public int getItemPosition(Object object){

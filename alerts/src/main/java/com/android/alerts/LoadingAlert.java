@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
+import com.android.alerts.Utils.ModuleUtils;
+
 
 /**
  * Created by amit.singh on 13-Dec-17.
@@ -27,18 +29,7 @@ public class LoadingAlert {
         LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         view = layoutInflater.inflate(R.layout.loading_alert, null, false);
         textTv=(TextView)view.findViewById(R.id.textTv);
-
-
-        Display display = ((Activity)context).getWindowManager().getDefaultDisplay();
-        final Point size = new Point();
-        display.getSize(size);
-
-        DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
-        int width = displayMetrics.widthPixels;
-        int hight = displayMetrics.heightPixels;
-        popupWindow = new PopupWindow(view, width, hight, true);
-        popupWindow.setOutsideTouchable(true);
-        popupWindow.setFocusable(true);
+        popupWindow = ModuleUtils.getPopupWindow(context,view);
         alertHide();
     }
 

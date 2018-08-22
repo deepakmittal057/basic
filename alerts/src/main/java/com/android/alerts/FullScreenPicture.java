@@ -2,56 +2,44 @@ package com.android.alerts;
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Color;
-import android.graphics.Point;
 import android.graphics.drawable.ColorDrawable;
 import android.support.v4.view.ViewPager;
-import android.util.DisplayMetrics;
-import android.view.Display;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.PopupWindow;
+import com.android.alerts.Utils.ModuleUtils;
 import com.android.alerts.adapter.SlideImage;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class FullScreenPicture {
 
     PopupWindow popupWindow;
-    ViewPager pictureVP;
+    ViewPager viewPager;
     private List<Integer> imageArray=new ArrayList<>();
     SlideImage adapter;
     Context context;
     View view;
-    int width;
-    int hight;
+
 
     public FullScreenPicture(Context context) {
         this.context=context;
-        getDisplaySize();
         LayoutInflater layoutInflater = (LayoutInflater) ((Activity)context).getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         view = layoutInflater.inflate(R.layout.pager, null, false);
-        pictureVP = (ViewPager) view.findViewById(R.id.pictureVP);
-        popupWindow = new PopupWindow(view, width, hight, true);
-        popupWindow.setOutsideTouchable(true);
-        popupWindow.setFocusable(true);
+        viewPager = (ViewPager) view.findViewById(R.id.pictureVP);
+        popupWindow = ModuleUtils.getPopupWindow(context,view);
 
     }
-    
+
     public void setImageArray(List<Integer> imageArray){
         this.imageArray.clear();
         this.imageArray=imageArray;
-    }
-
-
-
-
-    public void setAdapter(){
         adapter = new SlideImage(context, imageArray);
-        pictureVP.setAdapter(adapter);
+        viewPager.setAdapter(adapter);
     }
+
+
 
     public void showAlert(){
         popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
@@ -59,7 +47,7 @@ public class FullScreenPicture {
 
 
     public void setUp(){
-        pictureVP.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i2) {
                 //arrayPosition=i;
@@ -83,13 +71,5 @@ public class FullScreenPicture {
     }
 
 
-    private void getDisplaySize() {
-        Display display = ((Activity)context).getWindowManager().getDefaultDisplay();
-        final Point size = new Point();
-        display.getSize(size);
 
-        DisplayMetrics displayMetrics = ((Activity)context).getResources().getDisplayMetrics();
-        width = displayMetrics.widthPixels;
-        hight = displayMetrics.heightPixels;
-    }
 }
