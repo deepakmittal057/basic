@@ -2,6 +2,7 @@ package com.deepak.basic;
 
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Handler;
 import android.support.annotation.NonNull;
@@ -30,11 +31,13 @@ public class MainActivity extends AppCompatActivity {
         imageArray.add(R.mipmap.ic_launcher);
         imageArray.add(R.mipmap.ic_launcher);
         fullScreenPicture.setImageArray(imageArray);
+        fullScreenPicture.setAdapter();
+        fullScreenPicture.setBackGroundColor(Color.BLACK);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                fullScreenPicture.setUp();
+                fullScreenPicture.showAlert();
             }
         },500);
     }

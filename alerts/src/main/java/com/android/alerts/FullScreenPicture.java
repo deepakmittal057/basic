@@ -2,7 +2,9 @@ package com.android.alerts;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.graphics.Point;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v4.view.ViewPager;
 import android.util.DisplayMetrics;
 import android.view.Display;
@@ -21,37 +23,42 @@ public class FullScreenPicture {
     ViewPager pictureVP;
     private List<Integer> imageArray=new ArrayList<>();
     SlideImage adapter;
-    int i=0;
     Context context;
+    View view;
+    int width;
+    int hight;
 
     public FullScreenPicture(Context context) {
         this.context=context;
-    }
-
-    public void setImageArray(List<Integer> imageArray){
-        this.imageArray=imageArray;
-    }
-
-    public void setUp(){
-        //((Activity)context).getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getDisplaySize();
         LayoutInflater layoutInflater = (LayoutInflater) ((Activity)context).getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        View view = layoutInflater.inflate(R.layout.pager, null, false);
+        view = layoutInflater.inflate(R.layout.pager, null, false);
         pictureVP = (ViewPager) view.findViewById(R.id.pictureVP);
-
-        Display display = ((Activity)context).getWindowManager().getDefaultDisplay();
-        final Point size = new Point();
-        display.getSize(size);
-
-        DisplayMetrics displayMetrics = ((Activity)context).getResources().getDisplayMetrics();
-        int width = displayMetrics.widthPixels;
-        int hight = displayMetrics.heightPixels;
         popupWindow = new PopupWindow(view, width, hight, true);
         popupWindow.setOutsideTouchable(true);
         popupWindow.setFocusable(true);
-        //popupWindow.setBackgroundDrawable(activity.getResources().getDrawable(R.drawable.back_black));
-        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+
+    }
+    
+    public void setImageArray(List<Integer> imageArray){
+        this.imageArray.clear();
+        this.imageArray=imageArray;
+    }
+
+
+
+
+    public void setAdapter(){
         adapter = new SlideImage(context, imageArray);
         pictureVP.setAdapter(adapter);
+    }
+
+    public void showAlert(){
+        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+    }
+
+
+    public void setUp(){
         pictureVP.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int i, float v, int i2) {
@@ -68,5 +75,21 @@ public class FullScreenPicture {
 
             }
         });
+    }
+
+    public void setBackGroundColor(int color){
+        //popupWindow.setBackgroundDrawable(context.getResources().getDrawable(back_black));
+        popupWindow.setBackgroundDrawable(new ColorDrawable(color));
+    }
+
+
+    private void getDisplaySize() {
+        Display display = ((Activity)context).getWindowManager().getDefaultDisplay();
+        final Point size = new Point();
+        display.getSize(size);
+
+        DisplayMetrics displayMetrics = ((Activity)context).getResources().getDisplayMetrics();
+        width = displayMetrics.widthPixels;
+        hight = displayMetrics.heightPixels;
     }
 }
