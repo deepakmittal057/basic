@@ -18,7 +18,7 @@ public class SlideImage extends PagerAdapter {
     private List<Integer> IMAGES;
     private LayoutInflater inflater;
     private Context context;
-    
+
     public SlideImage(Context context, List<Integer> IMAGES) {
         this.context = context;
         this.IMAGES=IMAGES;

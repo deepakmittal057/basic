@@ -42,7 +42,11 @@ public class FullScreenPicture {
 
 
     public void showAlert(){
-        popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+        try {
+            popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 
