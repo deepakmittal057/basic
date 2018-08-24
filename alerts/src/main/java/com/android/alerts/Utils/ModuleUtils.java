@@ -6,7 +6,10 @@ import android.graphics.Point;
 import android.util.DisplayMetrics;
 import android.view.Display;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.PopupWindow;
+
+import com.squareup.picasso.Picasso;
 
 public class ModuleUtils {
 
@@ -25,5 +28,9 @@ public class ModuleUtils {
         display.getSize(size);
         DisplayMetrics displayMetrics = context.getResources().getDisplayMetrics();
         return displayMetrics;
+    }
+
+    public static void loadPicasso(ImageView imageView,String url){
+        Picasso.get().load(url).into(imageView);
     }
 }

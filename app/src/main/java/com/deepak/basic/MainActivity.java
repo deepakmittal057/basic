@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     CameraController cameraController;
     private ArrayList<Integer> imageArray=new ArrayList<>();
+    private ArrayList<String> imageArrayUrl=new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,8 +31,16 @@ public class MainActivity extends AppCompatActivity {
         imageArray.add(R.mipmap.ic_launcher);
         imageArray.add(R.mipmap.ic_launcher);
         imageArray.add(R.mipmap.ic_launcher);
-        fullScreenPicture.setImageArray(imageArray);
+        //fullScreenPicture.setImageArray(imageArray);
         fullScreenPicture.setBackGroundColor(Color.BLACK);
+
+
+        imageArrayUrl.add("https://wallpaperbrowse.com/media/images/sunflowers-mr.jpg");
+        imageArrayUrl.add("https://wallpaperbrowse.com/media/images/sunflowers-mr.jpg");
+        imageArrayUrl.add("https://wallpaperbrowse.com/media/images/sunflowers-mr.jpg");
+        imageArrayUrl.add("https://wallpaperbrowse.com/media/images/sunflowers-mr.jpg");
+        fullScreenPicture.setImageArrayUrl(imageArrayUrl);
+
 
         final CharSequence[] items = {"Phone Memory - "+"10"+" free space", "SD Card - "+"20"+" MB free space"};
         View view= LayoutInflater.from(this).inflate(R.layout.hi,null);
@@ -71,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 //loadingAlert.alertHide();
-                //fullScreenPicture.showAlert();
+                fullScreenPicture.showAlert();
             }
         },5000);
     }

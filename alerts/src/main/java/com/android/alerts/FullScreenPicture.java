@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.PopupWindow;
 import com.android.alerts.Utils.ModuleUtils;
 import com.android.alerts.adapter.SlideImage;
+import com.android.alerts.adapter.SlideImageUrl;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,7 +20,9 @@ public class FullScreenPicture {
     PopupWindow popupWindow;
     ViewPager viewPager;
     private List<Integer> imageArray=new ArrayList<>();
+    private List<String> imageArrayUrl=new ArrayList<>();
     SlideImage adapter;
+    SlideImageUrl adapterUrl;
     Context context;
     View view;
 
@@ -39,6 +43,12 @@ public class FullScreenPicture {
         viewPager.setAdapter(adapter);
     }
 
+    public void setImageArrayUrl(List<String> imageArrayUrl){
+        this.imageArrayUrl.clear();
+        this.imageArrayUrl=imageArrayUrl;
+        adapterUrl = new SlideImageUrl(context, imageArrayUrl);
+        viewPager.setAdapter(adapterUrl);
+    }
 
 
     public void showAlert(){
