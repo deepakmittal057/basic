@@ -27,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hi);
-        final FullScreenPicture fullScreenPicture=new FullScreenPicture(this);
+        final FullScreenPicture fullScreenPicture=FullScreenPicture.getInstance();
+        fullScreenPicture.build(this);
         imageArray.add(R.mipmap.ic_launcher);
         imageArray.add(R.mipmap.ic_launcher);
         imageArray.add(R.mipmap.ic_launcher);
@@ -40,9 +41,16 @@ public class MainActivity extends AppCompatActivity {
         imageArrayUrl.add("https://wallpaperbrowse.com/media/images/sunflowers-mr.jpg");
         imageArrayUrl.add("https://wallpaperbrowse.com/media/images/sunflowers-mr.jpg");
         fullScreenPicture.setImageArrayUrl(imageArrayUrl);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                fullScreenPicture.showAlert();
+
+            }
+        }, 1000);
 
 
-        final CharSequence[] items = {"Phone Memory - "+"10"+" free space", "SD Card - "+"20"+" MB free space"};
+        /*final CharSequence[] items = {"Phone Memory - "+"10"+" free space", "SD Card - "+"20"+" MB free space"};
         View view= LayoutInflater.from(this).inflate(R.layout.hi,null);
         final AllAlerts alerts=AllAlerts.getIntance();
 
@@ -53,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
             public void selectedItem(int i) {
                 Toast.makeText(MainActivity.this, String.valueOf(i), Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
         /*alerts.simpleAlert("title","message","YES","NO");
         alerts.setOnClickListener(new OnClickListener() {
             @Override

@@ -17,20 +17,27 @@ import java.util.List;
 
 public class FullScreenPicture {
 
-    PopupWindow popupWindow;
-    ViewPager viewPager;
+    private PopupWindow popupWindow;
+    private ViewPager viewPager;
     private List<Integer> imageArray=new ArrayList<>();
     private List<String> imageArrayUrl=new ArrayList<>();
-    SlideImage adapter;
-    SlideImageUrl adapterUrl;
-    Context context;
-    View view;
+    private SlideImage adapter;
+    private SlideImageUrl adapterUrl;
+    private View view;
+    private static FullScreenPicture fullScreenPicture;
+    private Context context;
+
+    public static FullScreenPicture getInstance(){
+        if(fullScreenPicture==null){
+            fullScreenPicture=new FullScreenPicture();
+        }
+        return fullScreenPicture;
+    }
 
 
-    public FullScreenPicture(Context context) {
+    public void build(Context context) {
         this.context=context;
-        LayoutInflater layoutInflater = (LayoutInflater) ((Activity)context).getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        view = layoutInflater.inflate(R.layout.pager, null, false);
+        view = LayoutInflater.from(context).inflate(R.layout.pager, null, false);
         viewPager = (ViewPager) view.findViewById(R.id.pictureVP);
         popupWindow = ModuleUtils.getPopupWindow(context,view);
 

@@ -19,7 +19,8 @@ public class Activity2 extends AppCompatActivity {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hi);
-        final FullScreenPicture fullScreenPicture=new FullScreenPicture(this);
+        final FullScreenPicture fullScreenPicture=FullScreenPicture.getInstance();
+        fullScreenPicture.build(this);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
