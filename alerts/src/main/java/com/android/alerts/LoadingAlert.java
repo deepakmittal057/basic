@@ -14,9 +14,7 @@ import android.widget.TextView;
 import com.android.alerts.Utils.ModuleUtils;
 
 
-/**
- * Created by amit.singh on 13-Dec-17.
- */
+
 
 public class LoadingAlert {
 
