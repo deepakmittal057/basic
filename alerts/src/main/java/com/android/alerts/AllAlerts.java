@@ -10,16 +10,22 @@ import com.android.alerts.interfaces.OnClickListener;
 import com.android.alerts.interfaces.OnItemSelectListener;
 
 public class AllAlerts {
-    Context context;
-    OnClickListener onClickListener;
-    OnItemSelectListener onItemSelectListener;
-
-    public AllAlerts(Context context) {
-        this.context = context;
+    private static AllAlerts allAlerts;
+    private OnClickListener onClickListener;
+    private OnItemSelectListener onItemSelectListener;
+    private AlertDialog.Builder builder;
+    public static AllAlerts getIntance() {
+        if(allAlerts==null){
+            allAlerts=new AllAlerts();
+        }
+        return allAlerts;
     }
 
-    public AlertDialog.Builder simpleAlert(String title,String message,String positiveButtonName,String negativeButtonName){
-        AlertDialog.Builder builder=new AlertDialog.Builder(context);
+
+
+
+    public AlertDialog.Builder simpleAlert(Context context,String title,String message,String positiveButtonName,String negativeButtonName){
+        builder=new AlertDialog.Builder(context);
         builder.setCancelable(false);
         builder.setTitle(title);
         builder.setMessage(message);
@@ -42,16 +48,16 @@ public class AllAlerts {
         return builder;
     }
 
-    public AlertDialog.Builder withCustomView(View view){
-        AlertDialog.Builder builder=new AlertDialog.Builder(context);
+    public AlertDialog.Builder withCustomView(Context context,View view){
+        builder=new AlertDialog.Builder(context);
         builder.setView(view);
         builder.setCancelable(false);
         builder.show();
         return builder;
     }
 
-    public AlertDialog.Builder withItemSelect(String title,CharSequence[] items){
-        AlertDialog.Builder builder=new AlertDialog.Builder(context);
+    public AlertDialog.Builder withItemSelect(Context context,String title,CharSequence[] items){
+        builder=new AlertDialog.Builder(context);
         builder.setTitle(title);
         builder.setCancelable(false);
         builder.setItems(items, new DialogInterface.OnClickListener() {
@@ -66,8 +72,8 @@ public class AllAlerts {
         return builder;
     }
 
-    public AlertDialog.Builder withItemSelectRadioButton(String title,CharSequence[] items){
-        AlertDialog.Builder builder=new AlertDialog.Builder(context);
+    public AlertDialog.Builder withItemSelectRadioButton(Context context,String title,CharSequence[] items){
+        builder=new AlertDialog.Builder(context);
         builder.setTitle(title);
         builder.setCancelable(false);
         builder.setSingleChoiceItems(items, 0, new DialogInterface.OnClickListener() {

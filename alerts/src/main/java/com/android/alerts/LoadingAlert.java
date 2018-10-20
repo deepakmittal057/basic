@@ -18,14 +18,23 @@ import com.android.alerts.Utils.ModuleUtils;
 
 public class LoadingAlert {
 
-    PopupWindow popupWindow;
-    View view;
-    TextView textTv;
+    private PopupWindow popupWindow;
+    private View view;
+    private TextView textTv;
+    private static LoadingAlert loadingAlert;
 
-    public LoadingAlert(Context context) {
+
+    public static LoadingAlert getInstance(){
+        if(loadingAlert==null){
+            loadingAlert=new LoadingAlert();
+        }
+        return loadingAlert;
+    }
+
+    public void builder(Context context){
         //activity.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        view = layoutInflater.inflate(R.layout.loading_alert, null, false);
+        //LayoutInflater layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        view = LayoutInflater.from(context).inflate(R.layout.loading_alert, null, false);
         textTv=(TextView)view.findViewById(R.id.textTv);
         popupWindow = ModuleUtils.getPopupWindow(context,view);
         alertHide();
@@ -33,15 +42,12 @@ public class LoadingAlert {
 
 
 
+
     public void alertShow(String s){
         try {
             if(!popupWindow.isShowing()){
-                try {
                     textTv.setText(s);
                     popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -51,11 +57,7 @@ public class LoadingAlert {
     public void alertHide(){
         try {
             if(popupWindow.isShowing()){
-                try {
                     popupWindow.dismiss();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
             }
         } catch (Exception e) {
             e.printStackTrace();

@@ -8,7 +8,7 @@ import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 
-import com.deepak.basicmodule.Alerts.LoadingAlert;
+import com.android.alerts.LoadingAlert;
 import com.deepak.basicmodule.Controller.AppNavigationController;
 import com.deepak.basicmodule.Controller.CameraController;
 import com.deepak.basicmodule.Utils.Permission;
@@ -21,13 +21,14 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        final LoadingAlert loadingAlert=new LoadingAlert(this);
+        final LoadingAlert loadingAlert=LoadingAlert.getInstance();
+        loadingAlert.builder(this);
         final AppNavigationController appNavigationController=new AppNavigationController(this);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                //loadingAlert.alertShow();
-                appNavigationController.Wf(Activity2.class);
+                loadingAlert.alertShow("");
+                //appNavigationController.Wf(Activity2.class);
             }
         },1000);
 

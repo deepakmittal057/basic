@@ -44,9 +44,10 @@ public class MainActivity extends AppCompatActivity {
 
         final CharSequence[] items = {"Phone Memory - "+"10"+" free space", "SD Card - "+"20"+" MB free space"};
         View view= LayoutInflater.from(this).inflate(R.layout.hi,null);
-        final AllAlerts alerts=new AllAlerts(this);
+        final AllAlerts alerts=AllAlerts.getIntance();
+
         //alerts.withItemSelect("title",items);
-        alerts.withItemSelectRadioButton("title",items);
+        alerts.withItemSelectRadioButton(this,"title",items);
         alerts.setOnItemSelectListener(new OnItemSelectListener() {
             @Override
             public void selectedItem(int i) {
@@ -69,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        final LoadingAlert loadingAlert=new LoadingAlert(this);
+        /*final LoadingAlert loadingAlert=new LoadingAlert(this);
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -82,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                 //loadingAlert.alertHide();
                 fullScreenPicture.showAlert();
             }
-        },5000);
+        },5000);*/
     }
 
 }
