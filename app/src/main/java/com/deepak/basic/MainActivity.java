@@ -7,8 +7,8 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.android.alerts.FullScreenPicture;
-import com.deepak.basicmodule.Controller.CameraController;
+import com.alerts.FullScreenPicture;
+import com.basicmodule.Controller.CameraController;
 
 import java.util.ArrayList;
 

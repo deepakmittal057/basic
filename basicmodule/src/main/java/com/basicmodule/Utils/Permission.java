@@ -1,4 +1,4 @@
-package com.deepak.basicmodule.Utils;
+package com.basicmodule.Utils;
 
 import android.Manifest;
 import android.app.Activity;

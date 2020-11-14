@@ -1,12 +1,12 @@
-package com.android.alerts;
+package com.alerts;
 
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.view.View;
 
-import com.android.alerts.interfaces.OnClickListener;
-import com.android.alerts.interfaces.OnItemSelectListener;
+import com.alerts.interfaces.OnClickListener;
+import com.alerts.interfaces.OnItemSelectListener;
 
 public class AllAlerts {
     private static AllAlerts allAlerts;

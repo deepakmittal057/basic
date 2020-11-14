@@ -1,26 +1,24 @@
-package com.android.alerts.adapter;
+package com.alerts.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-
 import androidx.viewpager.widget.PagerAdapter;
 
-import com.android.alerts.R;
-import com.android.alerts.Utils.ModuleUtils;
+import com.alerts.R;
 
 import java.util.List;
 
-public class SlideImageUrl extends PagerAdapter {
+public class SlideImage extends PagerAdapter {
 
 
-    private List<String> IMAGES;
+    private List<Integer> IMAGES;
     private LayoutInflater inflater;
     private Context context;
 
-    public SlideImageUrl(Context context, List<String> IMAGES) {
+    public SlideImage(Context context, List<Integer> IMAGES) {
         this.context = context;
         this.IMAGES=IMAGES;
         inflater = LayoutInflater.from(context);
@@ -44,9 +42,7 @@ public class SlideImageUrl extends PagerAdapter {
         assert imageLayout != null;
         ImageView imageView=(ImageView)imageLayout.findViewById(R.id.Profile_pic_imageView);
         view.addView(imageLayout, 0);
-        ModuleUtils.loadPicasso(imageView,IMAGES.get(position));
-
-        //imageView.setImageResource(IMAGES.get(position));
+        imageView.setImageResource(IMAGES.get(position));
 
         return imageLayout;
     }

@@ -1,4 +1,4 @@
-package com.android.alerts.interfaces;
+package com.alerts.interfaces;
 
 import android.view.View;
 

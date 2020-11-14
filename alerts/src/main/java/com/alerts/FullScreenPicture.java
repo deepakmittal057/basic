@@ -1,4 +1,4 @@
-package com.android.alerts;
+package com.alerts;
 
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
@@ -9,9 +9,9 @@ import android.widget.PopupWindow;
 
 import androidx.viewpager.widget.ViewPager;
 
-import com.android.alerts.Utils.ModuleUtils;
-import com.android.alerts.adapter.SlideImage;
-import com.android.alerts.adapter.SlideImageUrl;
+import com.alerts.Utils.ModuleUtils;
+import com.alerts.adapter.SlideImage;
+import com.alerts.adapter.SlideImageUrl;
 
 import java.util.ArrayList;
 import java.util.List;

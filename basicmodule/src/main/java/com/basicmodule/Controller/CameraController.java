@@ -1,4 +1,4 @@
-package com.deepak.basicmodule.Controller;
+package com.basicmodule.Controller;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -13,10 +13,10 @@ import android.view.Window;
 import android.widget.FrameLayout;
 
 
-import com.deepak.basicmodule.BuildConfig;
+import com.basicmodule.R;
+import com.basicmodule.BuildConfig;
 import androidx.core.content.FileProvider;
-import com.deepak.basicmodule.R;
-import com.deepak.basicmodule.Utils.Permission;
+import com.basicmodule.Utils.Permission;
 
 import java.io.File;
 import java.io.IOException;

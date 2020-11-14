@@ -1,4 +1,4 @@
-package com.deepak.basicmodule.Controller;
+package com.basicmodule.Controller;
 
 import android.app.Activity;
 import android.app.Fragment;

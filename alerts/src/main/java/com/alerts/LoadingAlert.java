@@ -1,4 +1,4 @@
-package com.android.alerts;
+package com.alerts;
 
 import android.app.Activity;
 import android.content.Context;
@@ -11,7 +11,7 @@ import android.view.View;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
-import com.android.alerts.Utils.ModuleUtils;
+import com.alerts.Utils.ModuleUtils;
 
 
 

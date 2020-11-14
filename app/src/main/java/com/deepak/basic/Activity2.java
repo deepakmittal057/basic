@@ -5,7 +5,7 @@ import android.os.Handler;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.android.alerts.FullScreenPicture;
+import com.alerts.FullScreenPicture;
 
 
 
