@@ -8,13 +8,13 @@ import android.os.Build;
 import android.os.Environment;
 import android.os.StrictMode;
 import android.provider.MediaStore;
-import android.support.v4.content.FileProvider;
 import android.view.View;
 import android.view.Window;
 import android.widget.FrameLayout;
 
 
 import com.deepak.basicmodule.BuildConfig;
+import androidx.core.content.FileProvider;
 import com.deepak.basicmodule.R;
 import com.deepak.basicmodule.Utils.Permission;
 
@@ -103,7 +103,8 @@ public class CameraController {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            fileUri = FileProvider.getUriForFile(activity, BuildConfig.APPLICATION_ID + ".provider", image);
+            //fileUri = FileProvider.getUriForFile(activity, BuildConfig.APPLICATION_ID + ".provider", image);
+            fileUri = FileProvider.getUriForFile(activity, BuildConfig.LIBRARY_PACKAGE_NAME + ".provider", image);
 
         } else {
             File file = new File(Environment.getExternalStorageDirectory(), "ElmundoBonito/"+ + System.currentTimeMillis() + ".jpg");

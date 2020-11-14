@@ -1,13 +1,14 @@
 package com.android.alerts;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.drawable.ColorDrawable;
-import android.support.v4.view.ViewPager;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.PopupWindow;
+
+import androidx.viewpager.widget.ViewPager;
+
 import com.android.alerts.Utils.ModuleUtils;
 import com.android.alerts.adapter.SlideImage;
 import com.android.alerts.adapter.SlideImageUrl;

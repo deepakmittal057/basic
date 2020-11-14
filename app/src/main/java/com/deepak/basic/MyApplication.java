@@ -1,7 +1,9 @@
 package com.deepak.basic;
 
 import android.app.Application;
-import android.support.multidex.MultiDex;
+
+import androidx.multidex.MultiDex;
+
 
 public class MyApplication extends Application {
     @Override

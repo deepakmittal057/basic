@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Basic.iml" filepath="$PROJECT_DIR$/Basic.iml" />
-      <module fileurl="file://$PROJECT_DIR$/alerts/alerts.iml" filepath="$PROJECT_DIR$/alerts/alerts.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/basicmodule/basicmodule.iml" filepath="$PROJECT_DIR$/basicmodule/basicmodule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/basic.iml" filepath="$PROJECT_DIR$/.idea/modules/basic.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/alerts/basic.alerts.iml" filepath="$PROJECT_DIR$/.idea/modules/alerts/basic.alerts.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/basic.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/basic.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/basicmodule/basic.basicmodule.iml" filepath="$PROJECT_DIR$/.idea/modules/basicmodule/basic.basicmodule.iml" />
     </modules>
   </component>
 </project>
