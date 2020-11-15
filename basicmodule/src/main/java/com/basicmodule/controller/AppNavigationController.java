@@ -1,4 +1,4 @@
-package com.basicmodule.Controller;
+package com.basicmodule.controller;
 
 import android.app.Activity;
 import android.app.Fragment;

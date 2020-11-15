@@ -9,7 +9,7 @@ import android.widget.PopupWindow;
 
 import androidx.viewpager.widget.ViewPager;
 
-import com.alerts.Utils.ModuleUtils;
+import com.alerts.utils.ModuleUtils;
 import com.alerts.adapter.SlideImage;
 import com.alerts.adapter.SlideImageUrl;
 

@@ -1,4 +1,4 @@
-package com.alerts.Utils;
+package com.alerts.utils;
 
 import android.app.Activity;
 import android.content.Context;

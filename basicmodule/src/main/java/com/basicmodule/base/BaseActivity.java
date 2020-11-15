@@ -1,4 +1,4 @@
-package com.basicmodule.Base;
+package com.basicmodule.base;
 
 import android.Manifest;
 import android.annotation.SuppressLint;

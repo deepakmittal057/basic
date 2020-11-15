@@ -1,4 +1,4 @@
-package com.basicmodule.Controller;
+package com.basicmodule.controller;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -16,7 +16,7 @@ import android.widget.FrameLayout;
 import com.basicmodule.R;
 import com.basicmodule.BuildConfig;
 import androidx.core.content.FileProvider;
-import com.basicmodule.Utils.Permission;
+import com.basicmodule.utils.Permission;
 
 import java.io.File;
 import java.io.IOException;

@@ -9,9 +9,9 @@ import android.os.Handler;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.alerts.LoadingAlert;
-import com.basicmodule.Controller.AppNavigationController;
-import com.basicmodule.Controller.CameraController;
-import com.basicmodule.Utils.Permission;
+import com.basicmodule.controller.AppNavigationController;
+import com.basicmodule.controller.CameraController;
+import com.basicmodule.utils.Permission;
 import com.theartofdev.edmodo.cropper.CropImage;
 
 public class MainActivity2 extends AppCompatActivity {

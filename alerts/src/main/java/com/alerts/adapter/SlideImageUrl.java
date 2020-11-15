@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import androidx.viewpager.widget.PagerAdapter;
 
 import com.alerts.R;
-import com.alerts.Utils.ModuleUtils;
+import com.alerts.utils.ModuleUtils;
 
 import java.util.List;
 
